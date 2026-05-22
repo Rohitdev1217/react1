@@ -4,16 +4,16 @@ const Ustate = () => {
   const [val, setVal] = useState(false);
   return (
     <div className="w-full h-screen bg-zinc-300 flex justify-center items-center ">
-      <div className="relative w-120 h-70 bg-zinc-200  rounded-md overflow-hidden ">
+      <div className="relative w-120 h-70 bg-zinc-200 flex  rounded-md overflow-hidden ">
         <img
-          className={`shrink-0 ${val === false ? "-translate-x-[0%]" : "-translate-x-[100%]"} object-cover w-full h-full`}
+          className={`shrink-0 ${val === false ? "-translate-x-[0%]" : "-translate-x-[100%]"}  object-cover w-full h-full`}
           src="https://images.unsplash.com/photo-1777633150161-f3d4390fe695?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="#"
+          alt=""
         />
         <img
           className={`shrink-0 ${val === false ? "-translate-x-[0%]" : "-translate-x-[100%]"} object-cover w-full h-full`}
           src="https://images.unsplash.com/photo-1778546978501-58b8908583ef?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="#"
+          alt="img"
         />
         <span
           onClick={() => setVal(() => !val)}
