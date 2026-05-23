@@ -1,52 +1,61 @@
-import Addfriend from "./components/Addfriend";
-import { useState } from "react";
+import React, { useState } from "react";
+import Practice from "./components/Practice";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   const data = [
     {
-      name: "Alex",
-      img: "https://images.unsplash.com/photo-1492462543947-040389c4a66c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      role: "bankend developer",
-      friend: true,
+      img: "https://i.scdn.co/image/ab6761670000ecd42ff4f703438a4f932200b1f6",
+      song: "drop dead",
+      arties: "Olivia Rodrigo",
+      add: false,
     },
     {
-      name: "Herry",
-      img: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=1448&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      role: "Frontend Developer",
-      friend: false,
+      img: "https://i.scdn.co/image/ab67616d0000b273a91c10fe9472d9bd89802e5a",
+      song: "taitor",
+      arties: "Olivia Rodrigo",
+      add: true,
     },
     {
-      name: "Biliy",
-      img: "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      role: "Tech Leader",
-      friend: true,
+      img: "https://i.scdn.co/image/ab6761670000ecd4d07b9631e56cb1d307665cfe",
+      song: "perfect",
+      arties: "Ed Sheeran",
+    },
+    {
+      img: "https://i.scdn.co/image/ab67616d0000b273629dc9e2e3bc20bbd7d92e4a",
+      song: "Baby",
+      arties: "justin biber",
+      add: false,
     },
   ];
-  const [val, setVal] = useState(data);
 
-  const handleFirendBtn = (cardIndex) => {
-    setVal((prev) => {
+  const [songData, setSongData] = useState(data);
+
+  const handleBtn = (CardIndex) => {
+    setSongData((prev) => {
       return prev.map((item, index) => {
-        if (index === cardIndex) {
-          return { ...item, friend: !item.friend };
+        if (index === CardIndex) {
+          return { ...item, add: !item.add };
         }
+
         return item;
       });
     });
   };
 
   return (
-    <div className="flex w-full gap-5 h-screen bg-zinc-200 items-center justify-center">
-      {val.map((item, index) => {
-        return (
-          <Addfriend
-            handleFirendBtn={handleFirendBtn}
-            index={index}
+    <div>
+      <Navbar data={songData} />
+      <div className="px-20 flex gap-10 flex-wrap  mt-10">
+        {songData.map((item, index) => (
+          <Practice
             key={index}
             values={item}
+            handleBtn={handleBtn}
+            index={index}
           />
-        );
-      })}
+        ))}
+      </div>
     </div>
   );
 };
