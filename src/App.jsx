@@ -14,12 +14,13 @@ const App = () => {
       img: "https://i.scdn.co/image/ab67616d0000b273a91c10fe9472d9bd89802e5a",
       song: "taitor",
       arties: "Olivia Rodrigo",
-      add: true,
+      add: false,
     },
     {
       img: "https://i.scdn.co/image/ab6761670000ecd4d07b9631e56cb1d307665cfe",
       song: "perfect",
       arties: "Ed Sheeran",
+      add: false,
     },
     {
       img: "https://i.scdn.co/image/ab67616d0000b273629dc9e2e3bc20bbd7d92e4a",

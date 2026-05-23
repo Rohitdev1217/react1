@@ -3,7 +3,9 @@ import React from "react";
 const Practice = ({ values, handleBtn, index }) => {
   const { img, song, arties, add } = values;
   return (
-    <div className="flex justify-between p-4  rounded-md relative  w-55 h-32 bg-zinc-100 ">
+    <div
+      className={`flex justify-between p-4  rounded-md relative  w-55 h-32 bg-zinc-100`}
+    >
       <div className="bg-zinc-300 rounded-md  overflow-hidden w-20 h-20 ">
         <img className="object-cover w-full h-full" src={img} alt="imges" />
       </div>
