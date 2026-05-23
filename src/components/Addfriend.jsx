@@ -1,12 +1,10 @@
-import React, { useState } from "react";
-
-const Addfriend = ({ values }) => {
-  const { name, img, role } = values;
+const Addfriend = ({ values, handleFirendBtn, index }) => {
+  const { name, img, role, friend } = values;
   return (
-    <div className="bg-zinc-200  rounded-md overflow-hidden     w-70 ">
-      <div className="w-full h-40 overflow-hidden   bg-blue-400 ">
+    <div className="bg-zinc-200  rounded-md overflow-hidden w-70 ">
+      <div className="w-full h-40 bg-zinc-100 overflow-hidden  ">
         <img
-          className="object-cover object-[center_top ] "
+          className="object-cover w-full h-full object-[center_top ] "
           src={img}
           alt="user-image"
         />
@@ -14,8 +12,11 @@ const Addfriend = ({ values }) => {
       <div className=" w-full  p-2 bg-white">
         <h1 className="text-lg">{name}</h1>
         <h5>{role}</h5>
-        <button className="bg-blue-400 mt-3 text-white text-sm font-semibold p-1 rounded-md">
-          Add Friend
+        <button
+          onClick={() => handleFirendBtn(index)}
+          className={`${friend ? "bg-green-400" : "bg-blue-400"} mt-3 text-white text-sm font-semibold p-1 rounded-md`}
+        >
+          {friend === true ? "Friend" : "Add Friend"}
         </button>
       </div>
     </div>
