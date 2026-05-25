@@ -13,7 +13,7 @@ const From = () => {
     <div>
       <form onSubmit={handleSubmit} action="">
         <input ref={nameRef} type="text" placeholder="name" />
-        <input ref={emailRef} type="text" placeholder="email" />
+        <input ref={emailRef} type="email" placeholder="email" />
         <input type="submit" />
       </form>
     </div>
