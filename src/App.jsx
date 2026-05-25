@@ -1,15 +1,10 @@
 import React from "react";
-import Form from "./components/From";
-import Formone from "./components/Formone";
-import Formhook from "./components/Formhook";
-const App = () => {
+import Navbar from "./components/Navbar";
 
-  
-  return (
-    <div>
-      <Form />
-    </div>
-  );
+const App = () => {
+  return <div>
+    <Navbar />
+  </div>;
 };
 
 export default App;
